@@ -40,6 +40,7 @@ app.post('/webhook', function  (req, res) {
 			});
 		});
 		res.sendStatus(200);
+		console.log(data.object);
 	}
 });
 
@@ -63,6 +64,10 @@ function evaluateMessage (recipientId, message) {
 	}
 	if (isContain(message.toLowerCase(), 'Bildo'.toLowerCase())) {
 		finalMessage = "Tu alma gemela";
+
+	}
+	if (isContain(message.toLowerCase(), 'Hola'.toLowerCase())) {
+		finalMessage = "Hola como estas";
 
 	}
 	sendMessageText(recipientId, finalMessage);
